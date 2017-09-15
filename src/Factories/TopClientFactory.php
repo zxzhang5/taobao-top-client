@@ -12,7 +12,7 @@ class TopClientFactory
      *
      * @return TopClient
      */
-    public function make(array $config)
+    public function make($config)
     {
         $config = $this->getConfig($config);
         return $this->getClient($config);
@@ -26,7 +26,7 @@ class TopClientFactory
      *
      * @return string[]
      */
-    protected function getConfig(array $config)
+    protected function getConfig($config)
     {
         if (!array_key_exists('app_key', $config)
             || !array_key_exists('app_secret', $config)) {
@@ -42,7 +42,7 @@ class TopClientFactory
      *
      * @return CloudsearchClient
      */
-    protected function getClient(array $config)
+    protected function getClient($config)
     {
         $c = new TopClient;
         $c->appkey = $config['app_key'];

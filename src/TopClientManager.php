@@ -15,7 +15,7 @@ class TopClientManager extends AbstractManager
         $this->factory = $factory;
     }
     
-    protected function createConnection(array $config)
+    protected function createConnection($config)
     {
         return $this->factory->make($config);
     }
